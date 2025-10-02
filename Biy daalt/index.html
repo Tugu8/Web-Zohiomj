@@ -5,71 +5,73 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Online Shop</title>
 </head>
-<body background="https://i.imgur.com/lmPjzxK.jpeg">
+<body background="Photos/images (1).jpg" style="background-size:cover;">
 
 
   <header>
-    <h1 align="center">🛍️ ONLINE SHOP 🛍️</h1>
+    <h1 align="center">
+      <font color="white" size="7">ONLINE SHOP</font>
+    </h1>
     <nav>
-      <table width="100%">
+      <table width="100%" bgcolor="3C3561" cellpadding="15">
         <tr align="center">
-          <td><a href="Categories.html">CATEGORIES</a></td>
-          <td><a href="new.html">NEW</a></td>
-          <td><a href="sales.html">SALE</a></td>
-          <td><a href="faq.html">FAQ</a></td>
+          <td><a href="Categories.html"><font color="white" size="4">CATEGORIES</font></a></td>
+          <td><a href="new.html"><font color="white" size="4">NEW</font></a></td>
+          <td><a href="sales.html"><font color="white" size="4">SALE</font></a></td>
+          <td><a href="faq.html"><font color="white" size="4">FAQ</font></a></td>
+          <td><a href="#" onclick="openLogin()"><font color="white" size="3">МИНИЙ БҮРТГЭЛ</font></a></td>
         </tr>
       </table>
     </nav>
   </header>
 
-  <hr>
+  <hr color="white" size="3">
 
 
-  <table border="1" width="80%" align="center" cellpadding="10">
+  <table border="1" width="85%" align="center" cellpadding="15" bgcolor="white">
     <tr>
       <td width="60%">
-        <h2>Манай дэлгүүрт тавтай морил!</h2>
+        <h2><font color="darkblue">Манай дэлгүүрт тавтай морил!</font></h2>
         <p>Энд та <b>шинэ загварын хувцас</b>, <b>цахилгаан бараа</b>, 
         <b>гоо сайхан</b>, <b>спортын хэрэгсэл</b>, <b>тоглоом</b> гээд 
         өргөн сонголттой бүтээгдэхүүнийг хамгийн хямд үнээр авах боломжтой.</p>
-        <p><font color="red">🎁 Шууд захиалаад гэртээ хүргүүлээрэй!</font></p>
+        <p><font color="red"><b>Шууд захиалаад гэртээ хүргүүлээрэй!</b></font></p>
       </td>
-      <td width="40%" align="center">
-        <img src="https://i.imgur.com/2pO7K5L.png" width="100%" alt="Shop Banner">
+      <td width="40%" align="center" bgcolor="#f9f9f9">
+        <img src="Photos/banner.jpg" width="100%" alt="Shop Banner">
       </td>
     </tr>
   </table>
 
   <br>
 
-
-  <marquee behavior="alternate" scrollamount="5">
-    🌟 Шинэ бараа ирлээ! 🌟   🎉 Хямдрал үргэлжилж байна! 🎉
+  <marquee behavior="alternate" scrollamount="6" bgcolor="yellow">
+     Шинэ бараа ирлээ!     Хямдрал үргэлжилж байна! 
   </marquee>
 
-  <br>
+  <br><br>
 
- 
-  <table border="1" width="90%" align="center" cellpadding="10">
-    <tr align="center">
+
+  <table border="1" width="90%" align="center" cellpadding="15" bgcolor="white">
+    <tr align="center" bgcolor="#f2f2f2">
       <td>
         <img src="Photos/sale/sale1.webp" width="150"><br>
-        👗 Эмэгтэй даашинз<br>
+         <b>Эмэгтэй даашинз</b><br>
         <font color="red"><b>₮45,000</b></font>
       </td>
       <td>
         <img src="Photos/new/new2.webp" width="150"><br>
-        👟 Эрэгтэй пүүз<br>
+         <b>Эрэгтэй пүүз</b><br>
         <font color="red"><b>₮99,000</b></font>
       </td>
       <td>
         <img src="Photos/sale/sale3.png" width="150"><br>
-        🎧 Bluetooth чихэвч<br>
+         <b>Bluetooth чихэвч</b><br>
         <font color="red"><b>₮89,000</b></font>
       </td>
       <td>
         <img src="Photos/sale/sale6.webp" width="150"><br>
-        🍳 Гал тогооны ком<br>
+         <b>Гал тогооны ком</b><br>
         <font color="red"><b>₮75,000</b></font>
       </td>
     </tr>
@@ -77,9 +79,77 @@
 
   <br><br>
 
+
   <center>
-    <font size="4">📞 Холбоо барих: 9999-8888 | ✉️ info@onlineshop.mn</font>
+    <table width="100%" bgcolor="3C3561" cellpadding="20">
+      <tr>
+        <td align="center">
+          <font color="white" size="4">📞 Холбоо барих: 9999-8888 | ✉️ info@onlineshop.mn</font>
+        </td>
+        <td align="right" size="2">
+          <b>© 2025 Онлайн дэлгүүр!</b>
+        </td>
+      </tr>
+    </table>
   </center>
+
+
+  <div id="loginPopup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.5);">
+    <center>
+      <table border="1" width="400" cellpadding="15" bgcolor="white" style="margin-top:100px;" bordercolor="orange">
+        <tr>
+          <td align="center">
+            <h2><font color="darkred">Бүртгэлээрээ нэвтрэх</font></h2>
+            <p>Та имэйл/утасны дугаар, нууц үгээ оруулна уу!</p>
+
+            <form>
+              <input type="text" placeholder="Утас эсвэл И-мэйл хаяг" size="30"><br><br>
+              <input type="password" placeholder="Нууц үг" size="30"><br><br>
+              <input type="submit" value="Нэвтрэх" style="width:100%; background-color:orange; color:white;">
+            </form>
+
+            <br>
+
+            <table border="1" width="100%" cellpadding="10" bgcolor="#1877f2" bordercolor="#1877f2">
+              <tr>
+                <td align="center">
+                  <font color="white"><b>Facebook – ээр нэвтрэх</b></font>
+                </td>
+              </tr>
+            </table>
+
+            <br>
+
+            <table border="1" width="100%" cellpadding="10" bgcolor="white" bordercolor="gray">
+              <tr>
+                <td align="center">
+                  <font color="black">Continue with Google</font>
+                </td>
+              </tr>
+            </table>
+
+            <br>
+            <p>
+              Шинэ хэрэглэгч? <a href="#">Шинээр бүртгүүлэх</a><br>
+              Нууц үгээ мартсан? <a href="#">Нууц үг сэргээх</a>
+            </p>
+
+            <button onclick="closeLogin()">Хаах</button>
+          </td>
+        </tr>
+      </table>
+    </center>
+  </div>
+
+
+  <script>
+    function openLogin(){
+      document.getElementById("loginPopup").style.display = "block";
+    }
+    function closeLogin(){
+      document.getElementById("loginPopup").style.display = "none";
+    }
+  </script>
 
 </body>
 </html>
