@@ -3,145 +3,267 @@
 <head>
     <meta charset="UTF-8">
     <title>Цүнх - Онлайн Дэлгүүр</title>
+
+    <style>
+        body {
+            background-color: #F5F5F5;
+            font-family: "Verdana", Geneva, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .page-wrapper {
+            width: 1080px;
+            margin: 0 auto;
+        }
+
+        header h1 {
+            text-align: center;
+            color: #2c3e50;
+            font-size: 3rem;
+            margin: 20px 0;
+        }
+
+        nav {
+            background-color: #2c3e50;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav li {
+            display: inline-block;
+        }
+
+        nav a {
+            display: block;
+            color: white;
+            font-family: "Verdana", Geneva, sans-serif;
+            font-size: 1.1rem;
+            padding: 15px 20px;
+            text-decoration: none;
+        }
+
+        nav a.account-link {
+            font-size: 0.9rem;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .main-content {
+            padding: 10px;
+        }
+
+        .main-content .page-title {
+            text-align: center;
+            color: #34495e;
+            font-size: 2.5rem;
+        }
+
+        .main-content hr {
+            width: 90%;
+            border: 0;
+            height: 1px;
+            background-color: #dddddd;
+            margin: 20px auto;
+        }
+
+        .content-layout {
+            display: flex;
+            gap: 10px;
+        }
+
+        .featured-column {
+            flex-basis: 45%;
+        }
+
+        .grid-column {
+            flex-basis: 55%;
+        }
+
+        .product-card {
+            background-color: #ffffff;
+            border: 1px solid #EAEAEA;
+            box-sizing: border-box;
+        }
+        
+        .product-card img {
+            width: 100%;
+            display: block;
+        }
+
+        .featured-card {
+            padding: 25px;
+        }
+
+        .featured-card .badge {
+            text-align: center;
+            color: #d35400;
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin: 0 0 15px 0;
+        }
+
+        .featured-card .title {
+            color: #34495e;
+            font-size: 1.75rem;
+            font-weight: bold;
+            margin: 15px 0 10px 0;
+        }
+
+        .featured-card .description {
+            color: #7f8c8d;
+            font-size: 1rem;
+            line-height: 1.5;
+            margin: 0 0 20px 0;
+        }
+
+        .featured-card .price {
+            color: #2c3e50;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .small-card {
+            padding: 15px;
+        }
+
+        .small-card .title {
+            color: #34495e;
+            font-size: 1rem;
+            font-weight: bold;
+            margin: 15px 0 10px 0;
+        }
+
+        .small-card .description {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            margin: 0 0 15px 0;
+        }
+
+        .small-card .price {
+            color: #2c3e50;
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            font-family: "Verdana", Geneva, sans-serif;
+            font-size: 1rem;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        footer .copyright {
+            font-weight: bold;
+        }
+
+    </style>
 </head>
 
-<body bgcolor="#F5F5F5">
+<body>
+    <div class="page-wrapper">
 
-<table width="1080" border="0" align="center" cellpadding="0" cellspacing="0">
-<tr>
-<td>
+        <header>
+            <h1>ONLINE SHOP</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Нүүр</a></li>
+                    <li><a href="Categories.html">CATEGORIES</a></li>
+                    <li><a href="new.html">NEW</a></li>
+                    <li><a href="sales.html">SALE</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="#" onclick="openLogin()" class="account-link">МИНИЙ БҮРТГЭЛ</a></li>
+                </ul>
+            </nav>
+        </header>
 
-    <header>
-        <h1 align="center">
-            <font face="Verdana, Geneva, sans-serif" color="#2c3e50" size="7">ONLINE SHOP</font>
-        </h1>
-        <nav>
-            <table width="100%" bgcolor="#2c3e50" cellpadding="15">
-                <tr align="center">
-                    <td><a href="index.html"><font face="Verdana, Geneva, sans-serif" color="white" size="4">Нүүр</font></a></td>
-                    <td><a href="Categories.html"><font face="Verdana, Geneva, sans-serif" color="white" size="4">CATEGORIES</font></a></td>
-                    <td><a href="new.html"><font face="Verdana, Geneva, sans-serif" color="white" size="4">NEW</font></a></td>
-                    <td><a href="sales.html"><font face="Verdana, Geneva, sans-serif" color="white" size="4">SALE</font></a></td>
-                    <td><a href="faq.html"><font face="Verdana, Geneva, sans-serif" color="white" size="4">FAQ</font></a></td>
-                    <td><a href="#" onclick="openLogin()"><font face="Verdana, Geneva, sans-serif" color="white" size="3">МИНИЙ БҮРТГЭЛ</font></a></td>
-                </tr>
-            </table>
-        </nav>
-    </header>
+        <main class="main-content">
+            <h1 class="page-title">Цүнх</h1>
+            <hr>
+            <br>
 
-    <h1 align="center">
-        <font face="Verdana, Geneva, sans-serif" color="#34495e" size="6">Цүнх</font>
-    </h1>
+            <div class="content-layout">
+                
+                <div class="featured-column">
+                    <div class="product-card featured-card">
+                        <p class="badge">✨ Онцлох бараа</p>
+                        <img src="photos/bags/bags1.jpg" alt="Шоппер цүнх">
+                        <p class="title">Шоппер цүнх</p>
+                        <p class="description">
+                            Вельветэн даавуун жижиг шоппер цүнх. Гарны бариул болон салдаг мөрөн бүстэй. Дотор талдаа цахилгаантай халаастай. Соронзон түгжээтэй.
+                        </p>
+                        <p class="price"><b>₮110,000</b></p>
+                    </div>
+                </div>
 
-    <hr width="90%" color="#dddddd" size="1" noshade>
-    <br>
+                <div class="grid-column">
+                    <div class="product-grid">
+                        
+                        <div class="product-card small-card">
+                            <img src="photos/bags/bags2.jpg" alt="Хотын хэв маягийн цүнх">
+                            <p class="title"><b>Цүнх</b></p>
+                            <p class="description">Хотын хэв маягийн цүнх. Металл чимэглэлтэй...</p>
+                            <p class="price"><b>₮100,000</b></p>
+                        </div>
 
-    <table border="0" width="100%" cellpadding="10" cellspacing="0">
-        <tr valign="top">
-            <td width="45%">
-                <table border="1" bordercolor="#EAEAEA" width="100%" bgcolor="#ffffff" cellpadding="25" cellspacing="0">
-                    <tr>
-                        <td align="center">
-                            <p align="center"><font face="Verdana, Geneva, sans-serif" color="#d35400" size="4"><b>✨ Онцлох бараа</b></font></p>
-                            <img src="photos/bags/bags1.jpg" width="100%" alt="Шоппер цүнх"><br><br>
-                            <p align="left">
-                                <font face="Verdana, Geneva, sans-serif" color="#34495e" size="5">
-                                    <b>Шоппер цүнх</b>
-                                </font><br>
-                                <font face="Verdana, Geneva, sans-serif" color="#7f8c8d" size="3">
-                                    Вельветэн даавуун жижиг шоппер цүнх. Гарны бариул болон салдаг мөрөн бүстэй. Дотор талдаа цахилгаантай халаастай. Соронзон түгжээтэй.
-                                </font><br><br><br>
-                                <font face="Verdana, Geneva, sans-serif" color="#2c3e50" size="6"><b>₮110,000</b></font>
-                            </p>
-                        </td>
-                    </tr>
-                </table>
-            </td>
+                        <div class="product-card small-card">
+                            <img src="photos/bags/bags3.jpg" alt="Жижигхэн цүнх">
+                            <p class="title"><b>Жижигхэн цүнх</b></p>
+                            <p class="description">Жижигхэн мини цүнх. Металл чимэглэлтэй...</p>
+                            <p class="price"><b>₮84,000</b></p>
+                        </div>
 
-            <td width="55%">
-                <table border="0" width="100%" cellspacing="20" cellpadding="0">
-                    <tr valign="top">
-                        <td>
-                            <table border="1" bordercolor="#EAEAEA" width="100%" bgcolor="#ffffff" cellpadding="15" cellspacing="0">
-                                <tr>
-                                    <td align="center">
-                                        <img src="photos/bags/bags2.jpg" width="100%" alt="Хотын хэв маягийн цүнх"><br><br>
-                                        <p align="left">
-                                            <font face="Verdana, Geneva, sans-serif" color="#34495e" size="3"><b>Цүнх</b></font><br>
-                                            <font face="Verdana, Geneva, sans-serif" color="#7f8c8d" size="2">Хотын хэв маягийн цүнх. Металл чимэглэлтэй...</font><br><br>
-                                            <font face="Verdana, Geneva, sans-serif" color="#2c3e50" size="4"><b>₮100,000</b></font>
-                                        </p>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                        <td>
-                             <table border="1" bordercolor="#EAEAEA" width="100%" bgcolor="#ffffff" cellpadding="15" cellspacing="0">
-                                <tr>
-                                    <td align="center">
-                                        <img src="photos/bags/bags3.jpg" width="100%" alt="Жижигхэн цүнх"><br><br>
-                                        <p align="left">
-                                            <font face="Verdana, Geneva, sans-serif" color="#34495e" size="3"><b>Жижигхэн цүнх</b></font><br>
-                                            <font face="Verdana, Geneva, sans-serif" color="#7f8c8d" size="2">Жижигхэн мини цүнх. Металл чимэглэлтэй...</font><br><br>
-                                            <font face="Verdana, Geneva, sans-serif" color="#2c3e50" size="4"><b>₮84,000</b></font>
-                                        </p>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-                    <tr valign="top">
-                        <td>
-                            <table border="1" bordercolor="#EAEAEA" width="100%" bgcolor="#ffffff" cellpadding="15" cellspacing="0">
-                                <tr>
-                                    <td align="center">
-                                        <img src="photos/bags/bags4.jpg" width="100%" alt="Аяллын цүнх"><br><br>
-                                        <p align="left">
-                                            <font face="Verdana, Geneva, sans-serif" color="#34495e" size="3"><b>Аяллын цүнх</b></font><br>
-                                            <font face="Verdana, Geneva, sans-serif" color="#7f8c8d" size="2">Савхин, замшийн чимэглэлтэй аяллын цүнх...</font><br><br>
-                                            <font face="Verdana, Geneva, sans-serif" color="#2c3e50" size="4"><b>₮400,000</b></font>
-                                        </p>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                        <td>
-                            <table border="1" bordercolor="#EAEAEA" width="100%" bgcolor="#ffffff" cellpadding="15" cellspacing="0">
-                                <tr>
-                                    <td align="center">
-                                        <img src="photos/bags/bags5.jpg" width="100%" alt="Хэвлэмэл хээтэй цүнх"><br><br>
-                                        <p align="left">
-                                            <font face="Verdana, Geneva, sans-serif" color="#34495e" size="3"><b>Цүнх</b></font><br>
-                                            <font face="Verdana, Geneva, sans-serif" color="#7f8c8d" size="2">Хэвлэмэл хээтэй цүнх. Үндсэн хэсэг нь...</font><br><br>
-                                            <font face="Verdana, Geneva, sans-serif" color="#2c3e50" size="4"><b>₮120,000</b></font>
-                                        </p>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
-    </table>
+                        <div class="product-card small-card">
+                            <img src="photos/bags/bags4.jpg" alt="Аяллын цүнх">
+                            <p class="title"><b>Аяллын цүнх</b></p>
+                            <p class="description">Савхин, замшийн чимэглэлтэй аяллын цүнх...</p>
+                            <p class="price"><b>₮400,000</b></p>
+                        </div>
 
-    <br><br>
+                        <div class="product-card small-card">
+                            <img src="photos/bags/bags5.jpg" alt="Хэвлэмэл хээтэй цүнх">
+                            <p class="title"><b>Цүнх</b></p>
+                            <p class="description">Хэвлэмэл хээтэй цүнх. Үндсэн хэсэг нь...</p>
+                            <p class="price"><b>₮120,000</b></p>
+                        </div>
 
-    <footer>
-        <table width="100%" bgcolor="#2c3e50" cellpadding="20">
-            <tr>
-                <td align="left">
-                    <font face="Verdana, Geneva, sans-serif" color="white" size="3">📞 Холбоо барих: 9999-8888 | ✉️ info@onlineshop.mn</font>
-                </td>
-                <td align="right">
-                    <font face="Verdana, Geneva, sans-serif" color="white" size="3"><b>© 2025 Онлайн дэлгүүр</b></font>
-                </td>
-            </tr>
-        </table>
-    </footer>
+                    </div>
+                </div>
 
-</td>
-</tr>
-</table>
+            </div>
+        </main>
+
+        <br><br>
+
+        <footer>
+            <div class="contact-info">
+                📞 Холбоо барих: 9999-8888 | ✉️ info@onlineshop.mn
+            </div>
+            <div class="copyright">
+                <b>© 2025 Онлайн дэлгүүр</b>
+            </div>
+        </footer>
+
+    </div>
 </body>
 </html>

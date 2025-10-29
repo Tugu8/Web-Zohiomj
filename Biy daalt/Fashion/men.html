@@ -3,142 +3,239 @@
 <head>
     <meta charset="UTF-8">
     <title>Эрэгтэй хувцас</title>
+
+    <style>
+        body {
+            background-color: #FFFFFF;
+            color: #000000;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #222244;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            font-weight: bold;
+        }
+
+        nav {
+            background-color: #444466;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        nav li {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        .main-content {
+            width: 80%;
+            margin: 20px auto;
+        }
+
+        .page-title {
+            text-align: center;
+            color: #222244;
+            font-size: 2rem;
+        }
+
+        .main-content hr {
+            width: 100%;
+            border: 0;
+            height: 1px;
+            background-color: #888888;
+            margin-bottom: 20px;
+        }
+
+        .product-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .product-item {
+            display: flex;
+            align-items: flex-start;
+            background-color: #EEEEEE;
+            border: 1px solid #DDDDDD;
+            padding: 15px;
+        }
+
+        .product-image {
+            flex-basis: 30%;
+            text-align: center;
+            padding-right: 15px;
+            box-sizing: border-box;
+        }
+
+        .product-image img {
+            width: 200px;
+            max-width: 100%;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .product-info {
+            flex-basis: 70%;
+        }
+
+        .product-info .title {
+            font-size: 1.75rem;
+            font-weight: bold;
+            margin: 0 0 10px 0;
+        }
+
+        .product-info .description {
+            font-size: 1rem;
+            color: #333333;
+            margin: 0 0 20px 0;
+            min-height: 2em;
+        }
+
+        .product-info .price {
+            font-size: 1.75rem;
+            font-weight: bold;
+            color: green;
+            margin: 0;
+        }
+        
+        footer {
+            background-color: #222244;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        footer .copyright {
+            font-size: 0.9rem;
+        }
+
+    </style>
 </head>
-<body bgcolor="#FFFFFF" text="#000000">
 
-    <table width="100%" bgcolor="#222244" cellpadding="15">
-        <tr align="center">
-            <td><font color="white" size="6"><b>ONLINE SHOP</b></font></td>
-        </tr>
-        <tr align="center" bgcolor="#444466">
-            <td>
-                <a href="index.html"><font color="white">Нүүр</font></a> |
-                <a href="Categories.html"><font color="white">CATEGORIES</font></a> |
-                <a href="new.html"><font color="white">NEW</font></a> |
-                <a href="sales.html"><font color="white">SALE</font></a> |
-                <a href="faq.html"><font color="white">FAQ</font></a> |
-                <a href="#"><font color="white">МИНИЙ БҮРТГЭЛ</font></a>
-            </td>
-        </tr>
-    </table>
+<body>
 
-    <h2 align="center"><font color="#222244">Эрэгтэй хувцас</font></h2>
-    <hr width="80%" color="#888888">
+    <header>
+        <h1>ONLINE SHOP</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Нүүр</a></li>
+                <li><a href="Categories.html">CATEGORIES</a></li>
+                <li><a href="new.html">NEW</a></li>
+                <li><a href="sales.html">SALE</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="#">МИНИЙ БҮРТГЭЛ</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <table border="0" width="80%" align="center" cellpadding="0" cellspacing="15">
+    <div class="main-content">
         
-        <tr>
-            <td>
-                <table border="1" bordercolor="#DDDDDD" width="100%" bgcolor="#EEEEEE" cellpadding="15">
-                    <tr valign="top">
-                        <td width="30%" align="center">
-                            <img src="photos/men/men1.jpg" width="200">
-                        </td>
-                        <td width="70%">
-                            <font size="5"><b>Эрэгтэй товчтой цамц</b></font><br>
-                            <font size="3" color="#333333">Хөнгөн материалтай сул загварын кардиган.</font><br><br><br>
-                            <font size="5" color="green"><b>₮70,000</b></font>
-                        </td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
+        <h2 class="page-title">Эрэгтэй хувцас</h2>
+        <hr>
 
-        <tr>
-            <td>
-                <table border="1" bordercolor="#DDDDDD" width="100%" bgcolor="#EEEEEE" cellpadding="15">
-                    <tr valign="top">
-                        <td width="30%" align="center">
-                            <img src="photos/men/men2.jpg" width="200">
-                        </td>
-                        <td width="70%">
-                            <font size="5"><b>Эрэгтэй поло цамц</b></font><br>
-                            <font size="3" color="#333333">Энгийн загварын поло цамц, богино ханцуйтай.</font><br><br><br>
-                            <font size="5" color="green"><b>₮83,000</b></font>
-                        </td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>
-                <table border="1" bordercolor="#DDDDDD" width="100%" bgcolor="#EEEEEE" cellpadding="15">
-                    <tr valign="top">
-                        <td width="30%" align="center">
-                            <img src="photos/men/men3.jpg" width="200">
-                        </td>
-                        <td width="70%">
-                            <font size="5"><b>Эрэгтэй цамц</b></font><br>
-                            <font size="3" color="#333333">Хөвөн даавуун, урт ханцуйтай цамц.</font><br><br><br>
-                            <font size="5" color="green"><b>₮75,000</b></font>
-                        </td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
+        <div class="product-list">
 
-        <tr>
-            <td>
-                <table border="1" bordercolor="#DDDDDD" width="100%" bgcolor="#EEEEEE" cellpadding="15">
-                    <tr valign="top">
-                        <td width="30%" align="center">
-                            <img src="photos/men/men4.jpg" width="200">
-                        </td>
-                        <td width="70%">
-                            <font size="5"><b>Эрэгтэй худи</b></font><br>
-                            <font size="3" color="#333333">Уян хатан даавуун, малгайтай худи.</font><br><br><br>
-                            <font size="5" color="green"><b>₮60,000</b></font>
-                        </td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>
-                <table border="1" bordercolor="#DDDDDD" width="100%" bgcolor="#EEEEEE" cellpadding="15">
-                    <tr valign="top">
-                        <td width="30%" align="center">
-                            <img src="photos/men/men5.jpg" width="200">
-                        </td>
-                        <td width="70%">
-                            <font size="5"><b>Эрэгтэй өмд</b></font><br>
-                            <font size="3" color="#333333">Нарийхан хөвөн өмд, уян бүстэй.</font><br><br><br>
-                            <font size="5" color="green"><b>₮60,000</b></font>
-                        </td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="photos/men/men1.jpg">
+                </div>
+                <div class="product-info">
+                    <p class="title">Эрэгтэй товчтой цамц</p>
+                    <p class="description">Хөнгөн материалтай сул загварын кардиган.</p>
+                    <p class="price">₮70,000</p>
+                </div>
+            </div>
 
-        <tr>
-            <td>
-                <table border="1" bordercolor="#DDDDDD" width="100%" bgcolor="#EEEEEE" cellpadding="15">
-                    <tr valign="top">
-                        <td width="30%" align="center">
-                            <img src="photos/men/men6.jpg" width="200">
-                        </td>
-                        <td width="70%">
-                            <font size="5"><b>Эрэгтэй жийнс</b></font><br>
-                            <font size="3" color="#333333">Өргөн шулуун загварын жийнс.</font><br><br><br>
-                            <font size="5" color="green"><b>₮55,000</b></font>
-                        </td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
-    </table>
-    <br>
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="photos/men/men2.jpg">
+                </div>
+                <div class="product-info">
+                    <p class="title">Эрэгтэй поло цамц</p>
+                    <p class="description">Энгийн загварын поло цамц, богино ханцуйтай.</p>
+                    <p class="price">₮83,000</p>
+                </div>
+            </div>
+            
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="photos/men/men3.jpg">
+                </div>
+                <div class="product-info">
+                    <p class="title">Эрэгтэй цамц</p>
+                    <p class="description">Хөвөн даавуун, урт ханцуйтай цамц.</p>
+                    <p class="price">₮75,000</p>
+                </div>
+            </div>
 
-    <table width="100%" bgcolor="#222244" cellpadding="15">
-        <tr>
-            <td align="center"><font color="white">📞 9999-8888 | ✉ info@onlineshop.mn</font></td>
-        </tr>
-        <tr>
-            <td align="center"><font color="white" size="2">© 2025 Онлайн дэлгүүр</font></td>
-        </tr>
-    </table>
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="photos/men/men4.jpg">
+                </div>
+                <div class="product-info">
+                    <p class="title">Эрэгтэй худи</p>
+                    <p class="description">Уян хатан даавуун, малгайтай худи.</p>
+                    <p class="price">₮60,000</p>
+                </div>
+            </div>
+            
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="photos/men/men5.jpg">
+                </div>
+                <div class="product-info">
+                    <p class="title">Эрэгтэй өмд</p>
+                    <p class="description">Нарийхан хөвөн өмд, уян бүстэй.</p>
+                    <p class="price">₮60,000</p>
+                </div>
+            </div>
+
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="photos/men/men6.jpg">
+                </div>
+                <div class="product-info">
+                    <p class="title">Эрэгтэй жийнс</p>
+                    <p class="description">Өргөн шулуун загварын жийнс.</p>
+                    <p class="price">₮55,000</p>
+                </div>
+            </div>
+
+        </div> 
+
+    </div> 
+
+    <footer>
+        <p>📞 9999-8888 | ✉ info@onlineshop.mn</p>
+        <p class="copyright">© 2025 Онлайн дэлгүүр</p>
+    </footer>
 
 </body>
 </html>

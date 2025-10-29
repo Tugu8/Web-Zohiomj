@@ -1,166 +1,229 @@
 <!DOCTYPE html>
 <html lang="mn">
-<header>
-    <h1 align="center">
-      <font color="black" size="7">ONLINE SHOP</font>
-    </h1>
-    <nav>
-      <table width="100%" bgcolor="3C3561" cellpadding="15">
-        <tr align="center">
-          <td><a href="index.html"><font color="white" size="4">Нүүр</font></a></td>
-          <td><a href="Categories.html"><font color="white" size="4">CATEGORIES</font></a></td>
-          <td><a href="new.html"><font color="white" size="4">NEW</font></a></td>
-          <td><a href="sales.html"><font color="white" size="4">SALE</font></a></td>
-          <td><a href="faq.html"><font color="white" size="4">FAQ</font></a></td>
-          <td><a href="#" onclick="openLogin()"><font color="white" size="3">МИНИЙ БҮРТГЭЛ</font></a></td>
-        </tr>
-      </table>
-    </nav>
-</header>
+
 <head>
-  <meta charset="UTF-8">
-  <title>Гутал</title>
+    <meta charset="UTF-8">
+    <title>Гутал</title>
+
+    <style>
+        body {
+            font-family: "Helvetica", Arial, sans-serif;
+            background-color: #f2f2f2;
+            color: #333333;
+            margin: 0;
+            padding: 0;
+        }
+        
+        header h1 {
+            text-align: center;
+            color: black;
+            font-size: 3rem;
+            margin: 20px 0;
+        }
+
+        nav {
+            background-color: #3C3561;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav li {
+            display: inline-block;
+        }
+
+        nav a {
+            display: block;
+            color: white;
+            font-size: 1.1rem;
+            padding: 15px 20px;
+            text-decoration: none;
+        }
+        
+        nav a.account-link {
+            font-size: 1rem;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+        
+        .main-content {
+            width: 90%;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        .main-content .page-title {
+            text-align: center;
+            font-family: "Calibri", sans-serif;
+            color: #0E0229;
+            font-size: 2.5rem;
+        }
+
+        .main-content hr {
+            width: 80%;
+            border: 0;
+            height: 1px;
+            background-color: #dddddd;
+            margin: 20px auto;
+        }
+
+        .product-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .product-card {
+            background-color: #ffffff;
+            padding: 15px;
+            flex-basis: 300px;
+            flex-grow: 1;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-sizing: border-box;
+        }
+
+        .product-card img {
+            width: 100%;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .product-card .title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin: 0 0 10px 0;
+        }
+
+        .product-card .description {
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin: 0 0 20px 0;
+            min-height: 50px;
+        }
+
+        .product-card .price {
+            font-size: 1.75rem;
+            font-weight: bold;
+        }
+        
+        footer {
+            background-color: #3C3561;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        footer .contact-info {
+            font-size: 1.1rem;
+        }
+
+        footer .copyright {
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+        
+    </style>
 </head>
 
-<body bgcolor="#f2f2f2" text="#333333">
+<body>
 
-  <h1 align="center">
-    <font face="Calibri, sans-serif" color="#0E0229">Гутал</font>
-  </h1>
+    <header>
+        <h1>ONLINE SHOP</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Нүүр</a></li>
+                <li><a href="Categories.html">CATEGORIES</a></li>
+                <li><a href="new.html">NEW</a></li>
+                <li><a href="sales.html">SALE</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="#" onclick="openLogin()" class="account-link">МИНИЙ БҮРТГЭЛ</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <hr width="80%" color="#dddddd" size="1" noshade>
+    <div class="main-content">
+        
+        <h1 class="page-title">Гутал</h1>
+        <hr>
 
-  <table border="0" width="90%" align="center" cellspacing="20" cellpadding="0">
-    <tr valign="top">
-      <td width="33%">
-        <table border="0" width="100%" bgcolor="#ffffff" cellpadding="15" cellspacing="0">
-          <tr>
-            <td align="center">
-              <img src="photos/shoes/shoes1.jpg" width="100%" alt="Эмэгтэй даашинз"><br><br>
-              <p align="left">
-                <font face="Helvetica, Arial, sans-serif" size="4">
-                  <b>Эрэгтэй гутал</b>
-                </font><br>
-                <font face="Helvetica, Arial, sans-serif" size="2">
-                  <b>Савхин, замшийн чимэглэлтэй спорт гутал. Дээд хэсэг нь олон хэсгээс бүрдсэн. Хэвтээ ултай.</b>
-                </font><br><br><br>
-                <font face="Helvetica, Arial, sans-serif" size="5"><b>₮150,000</b></font>
-              </p>
-            </td>
-          </tr>
-        </table>
-        </td>
+        <div class="product-grid">
 
-      <td width="33%">
-        <table border="0" width="100%" bgcolor="#ffffff" cellpadding="15" cellspacing="0">
-          <tr>
-            <td align="center">
-              <img src="photos/shoes/shoes2.jpg" width="100%" alt="Эмэгтэй даашинз"><br><br>
-              <p align="left">
-                <font face="Helvetica, Arial, sans-serif" size="4">
-                  <b>Эрэгтэй гутал</b>
-                </font><br>
-                <font face="Helvetica, Arial, sans-serif" size="2">
-                  <b>Ретро хэв маягийн спорт гутал. Дээд хэсэг нь олон хэсгээс бүрдсэн. Ул нь өнгөний контрасттай.</b>
-                </font><br><br><br>
-                <font face="Helvetica, Arial, sans-serif" size="5"><b>₮100,000</b></font>
-              </p>
-            </td>
-          </tr>
-        </table>
-        </td>
-      
-      <td width="33%">
-        <table border="0" width="100%" bgcolor="#ffffff" cellpadding="15" cellspacing="0">
-          <tr>
-            <td align="center">
-              <img src="photos/shoes/shoes3.jpg" width="100%" alt="Эмэгтэй даашинз"><br><br>
-              <p align="left">
-                <font face="Helvetica, Arial, sans-serif" size="4">
-                  <b>Эрэгтэй гутал</b>
-                </font><br>
-                <font face="Helvetica, Arial, sans-serif" size="2">
-                  <b>Нэг өнгийн, утаслахад зориулсан кроссовк. Гөлгөр дээд хэсэгтэй. Өргөн ултай.</b>
-                </font><br><br><br>
-                <font face="Helvetica, Arial, sans-serif" size="5"><b>₮100,000</b></font>
-              </p>
-            </td>
-          </tr>
-        </table>
-        </td>
-    </tr>
-    <tr valign="top">
-      <td width="33%">
-        <table border="0" width="100%" bgcolor="#ffffff" cellpadding="15" cellspacing="0">
-          <tr>
-            <td align="center">
-              <img src="photos/shoes/shoes4.jpg" width="100%" alt="Эмэгтэй даашинз"><br><br>
-              <p align="left">
-                <font face="Helvetica, Arial, sans-serif" size="4">
-                  <b>Эмэгтэй гутал</b>
-                </font><br>
-                <font face="Helvetica, Arial, sans-serif" size="2">
-                  <b>Замшийн богино гутал. Хажуу талдаа өмсөхөд хялбар болгох уян оруулгаатай. Ар талдаа гогцоотой. Өвдөг дугуй хэлбэртэй.</b>
-                </font><br><br>
-                <font face="Helvetica, Arial, sans-serif" size="5"><b>₮200,000</b></font>
-              </p>
-            </td>
-          </tr>
-        </table>
-        </td>
+            <div class="product-card">
+                <img src="photos/shoes/shoes1.jpg">
+                <p class="title">Эрэгтэй гутал</p>
+                <p class="description">
+                    Савхин, замшийн чимэглэлтэй спорт гутал. Дээд хэсэг нь олон хэсгээс бүрдсэн. Хэвтээ ултай.
+                </p>
+                <p class="price"><b>₮150,000</b></p>
+            </div>
 
-      <td width="33%">
-        <table border="0" width="100%" bgcolor="#ffffff" cellpadding="15" cellspacing="0">
-          <tr>
-            <td align="center">
-              <img src="photos/shoes/shoes5.jpg" width="100%" alt="Эмэгтэй даашинз"><br><br>
-              <p align="left">
-                <font face="Helvetica, Arial, sans-serif" size="4">
-                  <b>Эмэгтэй гутал</b>
-                </font><br>
-                <font face="Helvetica, Arial, sans-serif" size="2">
-                  <b>Савхин богино гутал. Өндөр, өргөн өсгийтэй, дугуй ултай. Хажуу талаасаа цахилгаантай.</b>
-                </font><br><br><br>
-                <font face="Helvetica, Arial, sans-serif" size="5"><b>₮120,000</b></font>
-              </p>
-            </td>
-          </tr>
-        </table>
-        </td>
-      
-      <td width="33%">
-        <table border="0" width="100%" bgcolor="#ffffff" cellpadding="15" cellspacing="0">
-          <tr>
-            <td align="center">
-              <img src="photos/shoes/shoes6.jpg" width="100%" alt="Эмэгтэй даашинз"><br><br>
-              <p align="left">
-                <font face="Helvetica, Arial, sans-serif" size="4">
-                  <b>Эмэгтэй гутал</b>
-                </font><br>
-                <font face="Helvetica, Arial, sans-serif" size="2">
-                  <b>ХЗамшийн мюли. Ар талдаа уян хажуу бүстэй бүсэлхүүстэй. Нарийхан дунд өсгийтэй. Үзүүр нь хурц.</b>
-                </font><br><br><br>
-                <font face="Helvetica, Arial, sans-serif" size="5"><b>₮90,000</b></font>
-              </p>
-            </td>
-          </tr>
-        </table>
-        </td>
-    </tr>
-  </table>
+            <div class="product-card">
+                <img src="photos/shoes/shoes2.jpg">
+                <p class="title">Эрэгтэй гутал</p>
+                <p class="description">
+                    Ретро хэв маягийн спорт гутал. Дээд хэсэг нь олон хэсгээс бүрдсэн. Ул нь өнгөний контрасттай.
+                </p>
+                <p class="price"><b>₮100,000</b></p>
+            </div>
+            
+            <div class="product-card">
+                <img src="photos/shoes/shoes3.jpg">
+                <p class="title">Эрэгтэй гутал</p>
+                <p class="description">
+                    Нэг өнгийн, утаслахад зориулсан кроссовк. Гөлгөр дээд хэсэгтэй. Өргөн ултай.
+                </p>
+                <p class="price"><b>₮100,000</b></p>
+            </div>
+            
+            <div class="product-card">
+                <img src="photos/shoes/shoes4.jpg">
+                <p class="title">Эмэгтэй гутал</p>
+                <p class="description">
+                    Замшийн богино гутал. Хажуу талдаа өмсөхөд хялбар болгох уян оруулгаатай. Ар талдаа гогцоотой. Өвдөг дугуй хэлбэртэй.
+                </p>
+                <p class="price"><b>₮200,000</b></p>
+            </div>
+
+            <div class="product-card">
+                <img src="photos/shoes/shoes5.jpg">
+                <p class="title">Эмэгтэй гутал</p>
+                <p class="description">
+                    Савхин богино гутал. Өндөр, өргөн өсгийтэй, дугуй ултай. Хажуу талаасаа цахилгаантай.
+                </Fp>
+                <p class="price"><b>₮120,000</b></p>
+            </div>
+            
+            <div class="product-card">
+                <img src="photos/shoes/shoes6.jpg">
+                <p class="title">Эмэгтэй гутал</p>
+                <p class="description">
+                    Замшийн мюли. Ар талдаа уян хажуу бүстэй бүсэлхүүстэй. Нарийхан дунд өсгийтэй. Үзүүр нь хурц.
+                </p>
+                <p class="price"><b>₮90,000</b></p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="contact-info">
+            📞 Холбоо барих: 9999-8888 | ✉️ info@onlineshop.mn
+        </div>
+        <div class="copyright">
+            <b>© 2025 Онлайн дэлгүүр!</b>
+        </div>
+    </footer>
 
 </body>
-<footer>
-    <table width="100%" bgcolor="3C3561" cellpadding="20">
-      <tr>
-        <td align="center">
-          <font color="white" size="4">📞 Холбоо барих: 9999-8888 | ✉️ info@onlineshop.mn</font>
-        </td>
-        <td align="right" size="2">
-          <b>© 2025 Онлайн дэлгүүр!</b>
-        </td>
-      </tr>
-    </table>
-</footer>
-
 </html>
