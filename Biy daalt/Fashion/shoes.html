@@ -1,229 +1,400 @@
 <!DOCTYPE html>
 <html lang="mn">
-
 <head>
     <meta charset="UTF-8">
-    <title>Гутал</title>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Гутал - ONLINE SHOP</title>
+    
     <style>
+        :root {
+            --primary: #5C4B99;
+            --secondary: #8A7EBF;
+            --light: #f9f9ff;
+            --text: #2d2d2d;
+            --accent: #FF7F50;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
-            font-family: "Helvetica", Arial, sans-serif;
-            background-color: #f2f2f2;
-            color: #333333;
-            margin: 0;
-            padding: 0;
-        }
-        
-        header h1 {
-            text-align: center;
-            color: black;
-            font-size: 3rem;
-            margin: 20px 0;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: var(--light);
+            color: var(--text);
+            line-height: 1.6;
         }
 
-        nav {
-            background-color: #3C3561;
-        }
+        a { text-decoration: none; color: inherit; }
 
-        nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
-
-        nav li {
-            display: inline-block;
-        }
-
-        nav a {
-            display: block;
+        .header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
-            font-size: 1.1rem;
-            padding: 15px 20px;
-            text-decoration: none;
-        }
-        
-        nav a.account-link {
-            font-size: 1rem;
-        }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
-        
-        .main-content {
-            width: 90%;
-            margin: 0 auto;
-            padding: 20px 0;
-        }
-
-        .main-content .page-title {
             text-align: center;
-            font-family: "Calibri", sans-serif;
-            color: #0E0229;
-            font-size: 2.5rem;
+            padding: 30px 0 20px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        .header h1 { margin-bottom: 10px; font-size: 44px; letter-spacing: 1px; }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            gap: 35px;
+        }
+        .navbar a {
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            position: relative;
+        }
+        .navbar a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -4px;
+            width: 0%;
+            height: 3px;
+            background: var(--accent);
+            transition: 0.3s;
+        }
+        .navbar a:hover::after { width: 100%; }
+
+        .container {
+            display: flex;
+            width: 90%;
+            max-width: 1400px; 
+            margin: 40px auto;
+            gap: 30px;
         }
 
-        .main-content hr {
-            width: 80%;
-            border: 0;
-            height: 1px;
-            background-color: #dddddd;
-            margin: 20px auto;
+        .sidebar {
+            flex: 1;
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 20px;
+            height: fit-content;
+        }
+        .sidebar h3 {
+            margin-bottom: 15px;
+            font-size: 22px;
+            color: var(--primary);
+        }
+        .sidebar ul { list-style: none; }
+        .sidebar li { margin-bottom: 10px; }
+        .sidebar a {
+            color: var(--text);
+            padding: 5px 0;
+            display: block;
+            transition: 0.3s;
+            border-radius: 5px;
+        }
+        .sidebar a:hover {
+            background: var(--primary);
+            color: white;
+            padding-left: 10px;
+        }
+
+        .products { flex: 3; }
+        .products h2 {
+            color: var(--primary);
+            margin-bottom: 25px;
+            font-size: 30px;
+            border-bottom: 3px solid var(--primary);
+            display: inline-block;
+            padding-bottom: 5px;
         }
 
         .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .product {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex; 
+            flex-direction: column; 
+        }
+        .product:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        .product img {
+            width: 160px;
+            height: 160px;
+            object-fit: cover;
+            margin: 0 auto 15px auto; 
+            border-radius: 10px;
+        }
+        .product h3 { font-size: 20px; margin: 10px 0 5px; }
+
+        .product .product-description {
+            font-size: 14px;
+            font-weight: normal;
+            color: var(--text); 
+            margin-bottom: 10px;
+            text-align: left; 
+        }
+        
+        .product .product-price { 
+            font-size: 18px; 
+            font-weight: bold; 
+            color: var(--accent); 
+            margin-bottom: 10px; 
+        }
+        
+
+        .product-content {
+             flex-grow: 1; 
+        }
+
+        .buttons {
             display: flex;
-            flex-wrap: wrap;
             justify-content: center;
-            gap: 20px;
+            gap: 10px;
+            margin-top: 15px; 
         }
 
-        .product-card {
-            background-color: #ffffff;
-            padding: 15px;
-            flex-basis: 300px;
-            flex-grow: 1;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            box-sizing: border-box;
+        button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+        button:hover {
+            background: var(--accent);
+            transform: scale(1.05);
         }
 
-        .product-card img {
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
             width: 100%;
-            display: block;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.6);
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        @keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 8% auto;
+            padding: 25px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 600px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+            position: relative;
+            animation: popIn 0.3s ease;
+        }
+        @keyframes popIn { from {transform: scale(0.8); opacity: 0;} to {transform: scale(1); opacity: 1;} }
+
+        .close {
+            position: absolute;
+            right: 20px;
+            top: 10px;
+            font-size: 28px;
+            font-weight: bold;
+            color: var(--primary);
+            cursor: pointer;
+        }
+        .close:hover { color: var(--accent); }
+
+        .modal-content img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 10px;
             margin-bottom: 15px;
         }
-
-        .product-card .title {
-            font-size: 1.25rem;
-            font-weight: bold;
-            margin: 0 0 10px 0;
-        }
-
-        .product-card .description {
-            font-size: 0.9rem;
-            font-weight: bold;
-            margin: 0 0 20px 0;
-            min-height: 50px;
-        }
-
-        .product-card .price {
-            font-size: 1.75rem;
-            font-weight: bold;
-        }
+        .modal-content h3 { font-size: 24px; color: var(--primary); margin-bottom: 10px; }
+        .modal-content p { margin-bottom: 10px; font-size: 16px; }
         
-        footer {
-            background-color: #3C3561;
+        .modal-price { 
+            font-size: 20px;
+            font-weight: bold;
+            color: var(--accent);
+            margin-top: 15px;
+        }
+
+        .footer {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 30px;
+            text-align: center;
+            padding: 25px 0;
+            margin-top: 60px;
+            box-shadow: 0 -3px 10px rgba(0,0,0,0.1);
         }
-
-        footer .contact-info {
-            font-size: 1.1rem;
-        }
-
-        footer .copyright {
-            font-size: 0.9rem;
-            font-weight: bold;
-        }
-        
     </style>
 </head>
-
 <body>
 
-    <header>
+    <header class="header">
         <h1>ONLINE SHOP</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Нүүр</a></li>
-                <li><a href="Categories.html">CATEGORIES</a></li>
-                <li><a href="new.html">NEW</a></li>
-                <li><a href="sales.html">SALE</a></li>
-                <li><a href="faq.html">FAQ</a></li>
-                <li><a href="#" onclick="openLogin()" class="account-link">МИНИЙ БҮРТГЭЛ</a></li>
-            </ul>
+        <nav class="navbar">
+            <a href="index.html">Нүүр</a>
+            <a href="Categories.html">CATEGORIES</a>
+            <a href="new.html">NEW</a>
+            <a href="sales.html">SALE</a>
+            <a href="faq.html">FAQ</a>
+            <a href="#" onclick="openLogin()">МИНИЙ БҮРТГЭЛ</a>
         </nav>
     </header>
 
-    <div class="main-content">
+    <div class="container">
         
-        <h1 class="page-title">Гутал</h1>
-        <hr>
+        <aside class="sidebar">
+            <h3>Категориуд</h3>
+            <ul>
+                <li><a href="women.html">Эмэгтэй хувцас</a></li>
+                <li><a href="men.html">Эрэгтэй хувцас</a></li>
+                <li><a href="shoes.html">Гутал</a></li>
+                <li><a href="bags.html">Цүнх</a></li>
+                <li><a href="acc.html">Гоёл чимэглэл</a></li>
+            </ul>
+        </aside>
 
-        <div class="product-grid">
-
-            <div class="product-card">
-                <img src="photos/shoes/shoes1.jpg">
-                <p class="title">Эрэгтэй гутал</p>
-                <p class="description">
-                    Савхин, замшийн чимэглэлтэй спорт гутал. Дээд хэсэг нь олон хэсгээс бүрдсэн. Хэвтээ ултай.
-                </p>
-                <p class="price"><b>₮150,000</b></p>
-            </div>
-
-            <div class="product-card">
-                <img src="photos/shoes/shoes2.jpg">
-                <p class="title">Эрэгтэй гутал</p>
-                <p class="description">
-                    Ретро хэв маягийн спорт гутал. Дээд хэсэг нь олон хэсгээс бүрдсэн. Ул нь өнгөний контрасттай.
-                </p>
-                <p class="price"><b>₮100,000</b></p>
-            </div>
+        <main class="products">
             
-            <div class="product-card">
-                <img src="photos/shoes/shoes3.jpg">
-                <p class="title">Эрэгтэй гутал</p>
-                <p class="description">
-                    Нэг өнгийн, утаслахад зориулсан кроссовк. Гөлгөр дээд хэсэгтэй. Өргөн ултай.
-                </p>
-                <p class="price"><b>₮100,000</b></p>
-            </div>
+            <h2>Гутал</h2>
             
-            <div class="product-card">
-                <img src="photos/shoes/shoes4.jpg">
-                <p class="title">Эмэгтэй гутал</p>
-                <p class="description">
-                    Замшийн богино гутал. Хажуу талдаа өмсөхөд хялбар болгох уян оруулгаатай. Ар талдаа гогцоотой. Өвдөг дугуй хэлбэртэй.
-                </p>
-                <p class="price"><b>₮200,000</b></p>
-            </div>
+            <div class="product-grid">
+                
+                <div class="product">
+                    <img src="photos/shoes/shoes1.jpg" alt="Эрэгтэй гутал">
+                    <div class="product-content">
+                         <h3>Эрэгтэй гутал</h3>
+                         <p class="product-description">Савхин, замшийн чимэглэлтэй спорт гутал. Дээд хэсэг нь олон хэсгээс бүрдсэн. Хэвтээ ултай.</p>
+                         <p class="product-price">₮150,000</p>
+                    </div>
+                    <div class="buttons">
+                        <button onclick="openModal(
+                            'photos/shoes/shoes1.jpg', 
+                            'Эрэгтэй гутал', 
+                            'Савхин, замшийн чимэглэлтэй спорт гутал. Дээд хэсэг нь олон хэсгээс бүрдсэн. Хэвтээ ултай.', 
+                            '₮150,000'
+                        )">Сагсанд нэмэх</button>
+                    </div>
+                </div>
 
-            <div class="product-card">
-                <img src="photos/shoes/shoes5.jpg">
-                <p class="title">Эмэгтэй гутал</p>
-                <p class="description">
-                    Савхин богино гутал. Өндөр, өргөн өсгийтэй, дугуй ултай. Хажуу талаасаа цахилгаантай.
-                </Fp>
-                <p class="price"><b>₮120,000</b></p>
-            </div>
-            
-            <div class="product-card">
-                <img src="photos/shoes/shoes6.jpg">
-                <p class="title">Эмэгтэй гутал</p>
-                <p class="description">
-                    Замшийн мюли. Ар талдаа уян хажуу бүстэй бүсэлхүүстэй. Нарийхан дунд өсгийтэй. Үзүүр нь хурц.
-                </p>
-                <p class="price"><b>₮90,000</b></p>
-            </div>
+                <div class="product">
+                    <img src="photos/shoes/shoes2.jpg" alt="Эрэгтэй гутал">
+                    <div class="product-content">
+                        <h3>Эрэгтэй гутал</h3>
+                        <p class="product-description">Ретро хэв маягийн спорт гутал. Дээд хэсэг нь олон хэсгээс бүрдсэн. Ул нь өнгөний контрасттай.</p>
+                        <p class="product-price">₮100,000</p>
+                    </div>
+                    <div class="buttons">
+                        <button onclick="openModal(
+                            'photos/shoes/shoes2.jpg', 
+                            'Эрэгтэй гутал', 
+                            'Ретро хэв маягийн спорт гутал. Дээд хэсэг нь олон хэсгээс бүрдсэн. Ул нь өнгөний контрасттай.', 
+                            '₮100,000'
+                        )">Сагсанд нэмэх</button>
+                    </div>
+                </div>
 
-        </div>
+                <div class="product">
+                    <img src="photos/shoes/shoes3.jpg" alt="Эрэгтэй гутал">
+                    <div class="product-content">
+                        <h3>Эрэгтэй гутал</h3>
+                        <p class="product-description">Нэг өнгийн, утаслахад зориулсан кроссовк. Гөлгөр дээд хэсэгтэй. Өргөн ултай.</p>
+                        <p class="product-price">₮100,000</p>
+                    </div>
+                    <div class="buttons">
+                         <button onclick="openModal(
+                            'photos/shoes/shoes3.jpg', 
+                            'Эрэгтэй гутал', 
+                            'Нэг өнгийн, утаслахад зориулсан кроссовк. Гөлгөр дээд хэсэгтэй. Өргөн ултай.', 
+                            '₮100,000'
+                        )">Сагсанд нэмэх</button>
+                    </div>
+                </div>
 
+                <div class="product">
+                    <img src="photos/shoes/shoes4.jpg" alt="Эмэгтэй гутал">
+                    <div class="product-content">
+                        <h3>Эмэгтэй гутал</h3>
+                        <p class="product-description">Замшийн богино гутал. Хажуу талдаа өмсөхөд хялбар болгох уян оруулгаатай. Ар талдаа гогцоотой. Өвдөг дугуй хэлбэртэй.</p>
+                        <p class="product-price">₮200,000</p>
+                    </div>
+                    <div class="buttons">
+                        <button onclick="openModal(
+                            'photos/shoes/shoes4.jpg', 
+                            'Эмэгтэй гутал', 
+                            'Замшийн богино гутал. Хажуу талдаа өмсөхөд хялбар болгох уян оруулгаатай. Ар талдаа гогцоотой. Өвдөг дугуй хэлбэртэй.', 
+                            '₮200,000'
+                        )">Сагсанд нэмэх</button>
+                    </div>
+                </div>
+
+                <div class="product">
+                    <img src="photos/shoes/shoes5.jpg" alt="Эмэгтэй гутал">
+                    <div class="product-content">
+                        <h3>Эмэгтэй гутал</h3>
+                        <p class="product-description">Савхин богино гутал. Өндөр, өргөн өсгийтэй, дугуй ултай. Хажуу талаасаа цахилгаантай.</p>
+                        <p class="product-price">₮120,000</p>
+                    </div>
+                    <div class="buttons">
+                        <button onclick="openModal(
+                            'photos/shoes/shoes5.jpg', 
+                            'Эмэгтэй гутал', 
+                            'Савхин богино гутал. Өндөр, өргөн өсгийтэй, дугуй ултай. Хажуу талаасаа цахилгаантай.', 
+                            '₮120,000'
+                        )">Сагсанд нэмэх</button>
+                    </div>
+                </div>
+
+                <div class="product">
+                    <img src="photos/shoes/shoes6.jpg" alt="Эмэгтэй гутал">
+                    <div class="product-content">
+                        <h3>Эмэгтэй гутал</h3>
+                        <p class="product-description">Замшийн мюли. Ар талдаа уян хажуу бүстэй бүсэлхүүстэй. Нарийхан дунд өсгийтэй. Үзүүр нь хурц.</p>
+                        <p class="product-price">₮90,000</p>
+                    </div>
+                    <div class="buttons">
+                        <button onclick="openModal(
+                            'photos/shoes/shoes6.jpg', 
+                            'Эмэгтэй гутал', 
+                            'Замшийн мюли. Ар талдаа уян хажуу бүстэй бүсэлхүүстэй. Нарийхан дунд өсгийтэй. Үзүүр нь хурц.', 
+                            '₮90,000'
+                        )">Сагсанд нэмэх</button>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+        
     </div>
 
-    <footer>
-        <div class="contact-info">
-            📞 Холбоо барих: 9999-8888 | ✉️ info@onlineshop.mn
-        </div>
-        <div class="copyright">
-            <b>© 2025 Онлайн дэлгүүр!</b>
-        </div>
+    <footer class="footer">
+        <p>📞 Холбоо барих: 9999-8888 | ✉️ info@onlineshop.mn</p>
+        <p>© 2025 Онлайн дэлгүүр!</p>
     </footer>
 
-</body>
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modalImg" src="" alt="Зураг">
+            <h3 id="modalTitle">Гарчиг</h3>
+            <p id="modalDescription">Тайлбар</p>
+            <p id="modalPrice" class="modal-price">Үнэ</p>
+        </div>
+    </div>
+
+    </body>
 </html>
